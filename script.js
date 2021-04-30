@@ -105,10 +105,10 @@ function getWeather(city) {
                                         fiveimage.setAttribute("src", "http://openweathermap.org/img/wn/"+ fiveicon +"@2x.png")
                                         var forecasttemp=document.createElement("p")
                                         forecasttemp.setAttribute("class", "font-weight-bold")
-                                        forecasttemp.textContent="temperature: " + fivetemp + "F"
+                                        forecasttemp.textContent="Temperature: " + fivetemp + "F"
                                         var forecasthumidity=document.createElement("p")
                                         forecasthumidity.setAttribute("class", "font-weight-bold")
-                                        forecasthumidity.textContent="humidity " + fivehumidity + "%"
+                                        forecasthumidity.textContent="Humidity " + fivehumidity + "%"
                                         div.appendChild(fivedate)
                                         div.appendChild(fiveimage)
                                         div.appendChild(forecasttemp)
