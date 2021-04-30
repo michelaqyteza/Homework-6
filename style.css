@@ -1,0 +1,43 @@
+body{
+    font-size: 1rem;
+}
+
+.currentWeather{
+    display: flex;
+
+}
+
+.currentWeatherText{
+    font-weight: bold;
+
+}
+
+.forecastDays{
+    width: 20%;
+    float: left;
+}
+
+.forecastDays .forecastcontainer{
+    width: 95%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 13px;
+}
+
+.forecastDays .h5{
+    font-size: 13px;
+
+}
+
+#hide{
+    display: none;
+}
+#green{
+    background: green;
+}
+#yellow{
+    background: yellow;
+}
+#red{
+    background: red;
+}

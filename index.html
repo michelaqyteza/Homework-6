@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <!--This is the top of the page that says weather dashboard-->
+    <div class="bg-dark pt-2 pb-3">
+        <div class="container">
+            <h1 class="text-center text-white">Weather Dashboard</h1>
+        </div>
+    </div>
+
+    <!-- The whole page container-->
+    <div class="container-fluid">
+
+        <!--the row container-->
+        <div class="row">
+
+            <!--side column where you search your city-->
+            <sidebar class="sidebar-sticky col-sm-4 col-md 3 bg-light pt-3">
+                <label class="font-weight-bold" for="searchCity" id="searchCityLabel">Search City:</label>
+                <form id="citySearch">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="searchCity" placeholder="Enter City">
+                            <div class="input-group-append">
+                                <!-- put an icon for button search-->
+                                <button class="btn btn-primary" type="button" id="citySearch"></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- past searches under the city search -->
+                <p class="font-weight-bold text-primary mb-1">Past Searches:</p>
+                <div id="pastList" class="list-group-1"></div>
+            </sidebar>
+
+            <!-- Weather area where it shows the current weather, top-right-->
+            <content id="hide" class="col-sm-8 col-md-9">
+                <div id="weatherContent" class="pt-3 hide">
+                    <div class="currentWeather w-100">
+                        <div class="currentWeatherBody pt-2">
+                            <h3 class="card-title font-weight-bold mb-0"></h3>
+                            <!-- rows of temp, humidity, windspeed, uv index-->
+                            <div class="currentWeatherText mt-0">
+                                <p id="topCityName"></p>
+                                <p>Temperature:<span id="curTemp"></span> F</p>
+                                <p>Humidity:<span id="curHumidity"></span> %</p>
+                                <p>Wind Speed:<span id="curWindSpeed"></span> MPH</p>
+                                <p>UV Index:<span id="curUv"></span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 day forecast-->
+                    <section class="container-fluid" id="forecast">
+                        <h3 class="font-weight-bold my=4">5 Day Forecast</h3>
+                        <div class="row text-center" id="forecastRow">
+                            <!-- <div class="forecast-container bg-primary text-white mb-4 col-2">
+                                <h5 class="date-title font-weight-bold">Date</h5>
+                                <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                                <p class="font-weight-bold">Temperature</p>
+                                <p class="font-weight-bold">Humidity</p>
+                            </div>
+                            <div class="forecast-container bg-primary text-white mb-4 col-2">
+                                <h5 class="date-title font-weight-bold">Date</h5>
+                                <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                                <p class="font-weight-bold">Temperature</p>
+                                <p class="font-weight-bold">Humidity</p>
+                            </div>
+                            <div class="forecast-container bg-primary text-white mb-4 col-2">
+                                <h5 class="date-title font-weight-bold">Date</h5>
+                                <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                                <p class="font-weight-bold">Temperature</p>
+                                <p class="font-weight-bold">Humidity</p>
+                            </div>
+                            <div class="forecast-container bg-primary text-white mb-4 col-2">
+                                <h5 class="date-title font-weight-bold">Date</h5>
+                                <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                                <p class="font-weight-bold">Temperature</p>
+                                <p class="font-weight-bold">Humidity</p>
+                            </div>
+                            <div class="forecast-container bg-primary text-white mb-4 col-2">
+                                <h5 class="date-title font-weight-bold">Date</h5>
+                                <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                                <p class="font-weight-bold">Temperature</p>
+                                <p class="font-weight-bold">Humidity</p>
+                            </div> -->
+
+
+                        </div>
+                    </section>
+                </div>
+            </content>
+        </div>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+        <script src="script.js"></script>
+</body>
+
+</html>
