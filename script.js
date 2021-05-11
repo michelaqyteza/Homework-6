@@ -8,6 +8,7 @@ var list = document.getElementById("pastList")
 var topCity = document.getElementById("topCityName")
 var forecastrow=document.getElementById("forecastRow")
 var hide= document.getElementById("hide")
+var city= "city";
 
 if (!(localStorage.getItem("searched") == null)) {
     var searchedarray = JSON.parse(localStorage.getItem("searched"))
@@ -25,9 +26,9 @@ if (!(localStorage.getItem("searched") == null)) {
 }
 
 
-
+/* LINE 30, 31, 134 Look at  with the var on line 11*/
 function getWeather(city) {
-    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=" + key)
+    fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=" + key)
         .then(function (response) {
             response.json()
                 .then(function (data) {
@@ -87,7 +88,7 @@ function getWeather(city) {
                                     topCity.textContent=cityName + " " + currenttime
                                     var currenticon=document.createElement("img")
                                     var icon=data.current.weather[0].icon
-                                    currenticon.setAttribute("src", "http://openweathermap.org/img/wn/"+ icon +"@2x.png")
+                                    currenticon.setAttribute("src", "https://openweathermap.org/img/wn/"+ icon +"@2x.png")
                                     topCity.appendChild(currenticon)
 
                                     for(var i=0; i<5; i++){
@@ -102,7 +103,7 @@ function getWeather(city) {
                                         fivedate.setAttribute("class","date-title font-weight-bold")
                                         fivedate.textContent=date
                                         var fiveimage=document.createElement("img")
-                                        fiveimage.setAttribute("src", "http://openweathermap.org/img/wn/"+ fiveicon +"@2x.png")
+                                        fiveimage.setAttribute("src", "https://openweathermap.org/img/wn/"+ fiveicon +"@2x.png")
                                         var forecasttemp=document.createElement("p")
                                         forecasttemp.setAttribute("class", "font-weight-bold")
                                         forecasttemp.textContent="Temperature: " + fivetemp + "F"
@@ -133,4 +134,4 @@ searchbtn.addEventListener("click", function (event) {
         var city = btn.parentNode.parentNode.childNodes[1].value
         getWeather(city)
     }
-}) 
+})
